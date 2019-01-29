@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShoppingListV1.Views.AddProduto">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal" >
+                <Entry x:Name="NomeProduto" Placeholder="O que falta?" HorizontalOptions="FillAndExpand"/>
+                <Button Text="Add"  HorizontalOptions="End" Clicked="AdicionarProduto" />
+            </StackLayout>
+            <ListView  Margin="20" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Margin="20,0,0,0" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                                <Label Text="{Binding NomeProduto}" VerticalTextAlignment="Start" HorizontalOptions="StartAndExpand" />
+                                <Button Text="+" />
+                                <Button Text="-" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
